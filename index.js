@@ -1,3 +1,4 @@
+// Font Changer
 let font_families = {
     serif: "Serif",
     "sans-serif": "Sans Serif",
@@ -31,6 +32,7 @@ font_families_select.addEventListener("change", function () {
     class_toggle(font_changer_test, Object.keys(font_families), this.value);
 });
 
+// IF to Swich and VicaVerse
 let if_to_be_switch = () => {
     let job = "Manager";
     let salary = 0;
@@ -120,3 +122,13 @@ let switch_into_if = () => {
     return money;
 };
 console.log("switch_into_if", switch_into_if());
+
+// Leading and Following Existance
+let check_leading_following = (to_check, to_check_against)=>{
+    return (Array.isArray(to_check_against) && !isNaN(to_check)) ? (to_check_against.includes(to_check-1) && to_check_against.includes(to_check+1) ) : false ;
+};
+
+let arrayOfNumbers = [1, 2, 4, 10, 20, 12];
+console.log(check_leading_following(11, arrayOfNumbers));
+console.log(check_leading_following(3, arrayOfNumbers));
+console.log(check_leading_following(5, arrayOfNumbers));
