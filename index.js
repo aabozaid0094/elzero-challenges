@@ -198,3 +198,17 @@ let createArray = (start, end) =>{
 }
 
 console.log(createArray(5, 10)); // Output [5, 6, 7, 9, 10]
+
+
+// Show/Hide Paragraph
+paragraph_toggle_test_computed_style = window.getComputedStyle(paragraph_toggle_test);
+paragraph_toggle.addEventListener('click', function() {
+    switch (paragraph_toggle_test_computed_style.getPropertyValue('visibility')) {
+        case 'visible':
+            paragraph_toggle_test.style.visibility = 'hidden';
+            break;
+        case 'hidden':
+            paragraph_toggle_test.style.visibility = 'visible';
+            break;
+    }
+});
