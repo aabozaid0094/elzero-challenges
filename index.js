@@ -162,3 +162,19 @@ status("Osama", 38, true); // "Hello Osama, Age Is 38, Available For Hire"
 status(38, "Osama", true); // "Hello Osama, Age Is 38, Available For Hire"
 status(true, 38, "Osama"); // "Hello Osama, Age Is 38, Available For Hire"
 status(false, "Osama", 38); // "Hello Osama, Age Is 38, Not Available For Hire"
+
+// Object Property Not Editable
+const myObject = {
+    a: 1,
+    b: 2,
+    c: 3,
+};
+
+// Write Code Here To Prevent Changing Of Property C Value
+Object.defineProperty(myObject, "c", {
+    value: myObject.c,
+    writable: false,
+});
+
+myObject.c = 100;
+console.log(myObject.c); // 3
