@@ -1,3 +1,5 @@
+// Very Easy
+
 // Font Changer
 let font_families = {
     serif: "Serif",
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 font_families_select.addEventListener("change", function () {
     class_toggle(font_changer_test, Object.keys(font_families), this.value);
 });
-
 
 // IF to Swich and VicaVerse
 let if_to_be_switch = () => {
@@ -124,7 +125,6 @@ let switch_into_if = () => {
 };
 console.log("switch_into_if", switch_into_if());
 
-
 // Leading and Following Existance
 let check_leading_following = (to_check, to_check_against) => {
     return Array.isArray(to_check_against) && !isNaN(to_check)
@@ -137,7 +137,6 @@ let arrayOfNumbers = [1, 2, 4, 10, 20, 12];
 console.log(check_leading_following(11, arrayOfNumbers));
 console.log(check_leading_following(3, arrayOfNumbers));
 console.log(check_leading_following(5, arrayOfNumbers));
-
 
 // Parmeters Random Order
 let status = (parmeter1, parmeter2, parmeter3) => {
@@ -166,7 +165,6 @@ status(38, "Osama", true); // "Hello Osama, Age Is 38, Available For Hire"
 status(true, 38, "Osama"); // "Hello Osama, Age Is 38, Available For Hire"
 status(false, "Osama", 38); // "Hello Osama, Age Is 38, Not Available For Hire"
 
-
 // Object Property Not Editable
 const myObject = {
     a: 1,
@@ -183,32 +181,57 @@ Object.defineProperty(myObject, "c", {
 myObject.c = 100;
 console.log(myObject.c); // 3
 
-
 // Range To Array Without 8
-let range = (start, end)=>{
-    if(start === end) return [start];
+let range = (start, end) => {
+    if (start === end) return [start];
     return [start, ...range(start + 1, end)];
-}
+};
 
-let createArray = (start, end) =>{
+let createArray = (start, end) => {
     if (Number.isInteger(start) && Number.isInteger(end)) {
-        return range(start, end).filter((value)=>value!=8);
+        return range(start, end).filter((value) => value != 8);
     }
     return;
-}
+};
 
 console.log(createArray(5, 10)); // Output [5, 6, 7, 9, 10]
 
-
 // Show/Hide Paragraph
-paragraph_toggle_test_computed_style = window.getComputedStyle(paragraph_toggle_test);
-paragraph_toggle.addEventListener('click', function() {
-    switch (paragraph_toggle_test_computed_style.getPropertyValue('visibility')) {
-        case 'visible':
-            paragraph_toggle_test.style.visibility = 'hidden';
+paragraph_toggle_test_computed_style = window.getComputedStyle(
+    paragraph_toggle_test
+);
+paragraph_toggle.addEventListener("click", function () {
+    switch (
+        paragraph_toggle_test_computed_style.getPropertyValue("visibility")
+    ) {
+        case "visible":
+            paragraph_toggle_test.style.visibility = "hidden";
             break;
-        case 'hidden':
-            paragraph_toggle_test.style.visibility = 'visible';
+        case "hidden":
+            paragraph_toggle_test.style.visibility = "visible";
             break;
     }
 });
+
+// Easy Challenges
+
+//Word Before Last Length
+function wordBeforeLastLength(sentence) {
+    const words = sentence.split(" ");
+    const lengthyWords = [];
+    if(words.length<2) return false;
+    words.forEach((word) => {
+        if (word.length>1) {
+            lengthyWords.push(word);
+        }
+    });
+    if(lengthyWords.length===2) return words[0];
+    return lengthyWords[lengthyWords.length-2].length;
+}
+
+console.log(wordBeforeLastLength("Elzero Web School")); // Web => 3
+console.log(wordBeforeLastLength("Hello Elzero Web School    A ")); // Web => 3
+console.log(wordBeforeLastLength("Hello Elzero    Web   School  ")); // Web => 3
+console.log(wordBeforeLastLength("Hello")); // False
+console.log(wordBeforeLastLength("Hello Elzero")); // Hello
+console.log(wordBeforeLastLength("Hello Elzero    A")); // Hello
