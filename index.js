@@ -213,6 +213,7 @@ paragraph_toggle.addEventListener("click", function () {
     }
 });
 
+
 // Easy Challenges
 
 //Word Before Last Length
@@ -235,3 +236,14 @@ console.log(wordBeforeLastLength("Hello Elzero    Web   School  ")); // Web => 3
 console.log(wordBeforeLastLength("Hello")); // False
 console.log(wordBeforeLastLength("Hello Elzero")); // Hello
 console.log(wordBeforeLastLength("Hello Elzero    A")); // Hello
+
+// Array Methods Challenge
+let zero = 0;
+let counter = 3;
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+my = my.slice(zero, counter+1).reverse();
+console.log(my); // ["Osama", "Elham", "Mazero", "Ahmed"];
+console.log(my.slice(zero+1, counter)); // ["Elham", "Mazero"]
+console.log(my[zero+1].slice(zero,counter-1) + my[counter-1].slice(counter-1)); // "Elzero"
+console.log(my[counter-1].slice(zero-2,zero-1) + my[counter-1].slice(zero-1).toUpperCase()); // "rO"
