@@ -35,6 +35,7 @@ font_families_select.addEventListener("change", function () {
 });
 
 // IF to Swich and VicaVerse
+console.log("== IF to Swich and VicaVerse ==");
 let if_to_be_switch = () => {
     let job = "Manager";
     let salary = 0;
@@ -124,8 +125,10 @@ let switch_into_if = () => {
     return money;
 };
 console.log("switch_into_if", switch_into_if());
+console.log("===============================");
 
 // Leading and Following Existance
+console.log("== Leading and Following Existance ==");
 let check_leading_following = (to_check, to_check_against) => {
     return Array.isArray(to_check_against) && !isNaN(to_check)
         ? to_check_against.includes(to_check - 1) &&
@@ -137,8 +140,10 @@ let arrayOfNumbers = [1, 2, 4, 10, 20, 12];
 console.log(check_leading_following(11, arrayOfNumbers));
 console.log(check_leading_following(3, arrayOfNumbers));
 console.log(check_leading_following(5, arrayOfNumbers));
+console.log("===============================");
 
 // Parmeters Random Order
+console.log("Parmeters Random Order");
 let status = (parmeter1, parmeter2, parmeter3) => {
     let parmeters = [parmeter1, parmeter2, parmeter3];
     let variables = {
@@ -164,8 +169,10 @@ status("Osama", 38, true); // "Hello Osama, Age Is 38, Available For Hire"
 status(38, "Osama", true); // "Hello Osama, Age Is 38, Available For Hire"
 status(true, 38, "Osama"); // "Hello Osama, Age Is 38, Available For Hire"
 status(false, "Osama", 38); // "Hello Osama, Age Is 38, Not Available For Hire"
+console.log("===============================");
 
 // Object Property Not Editable
+console.log("== Object Property Not Editable ==");
 const myObject = {
     a: 1,
     b: 2,
@@ -180,8 +187,10 @@ Object.defineProperty(myObject, "c", {
 
 myObject.c = 100;
 console.log(myObject.c); // 3
+console.log("===============================");
 
 // Range To Array Without 8
+console.log("== Range To Array Without 8 ==");
 let range = (start, end) => {
     if (start === end) return [start];
     return [start, ...range(start + 1, end)];
@@ -195,6 +204,7 @@ let createArray = (start, end) => {
 };
 
 console.log(createArray(5, 10)); // Output [5, 6, 7, 9, 10]
+console.log("===============================");
 
 // Show/Hide Paragraph
 paragraph_toggle_test_computed_style = window.getComputedStyle(
@@ -213,21 +223,21 @@ paragraph_toggle.addEventListener("click", function () {
     }
 });
 
-
 // Easy Challenges
 
-//Word Before Last Length
+// Word Before Last Length
+console.log("== Word Before Last Length ==");
 function wordBeforeLastLength(sentence) {
     const words = sentence.split(" ");
     const lengthyWords = [];
-    if(words.length<2) return false;
+    if (words.length < 2) return false;
     words.forEach((word) => {
-        if (word.length>1) {
+        if (word.length > 1) {
             lengthyWords.push(word);
         }
     });
-    if(lengthyWords.length===2) return words[0];
-    return lengthyWords[lengthyWords.length-2].length;
+    if (lengthyWords.length === 2) return words[0];
+    return lengthyWords[lengthyWords.length - 2].length;
 }
 
 console.log(wordBeforeLastLength("Elzero Web School")); // Web => 3
@@ -236,14 +246,22 @@ console.log(wordBeforeLastLength("Hello Elzero    Web   School  ")); // Web => 3
 console.log(wordBeforeLastLength("Hello")); // False
 console.log(wordBeforeLastLength("Hello Elzero")); // Hello
 console.log(wordBeforeLastLength("Hello Elzero    A")); // Hello
+console.log("===============================");
 
 // Array Methods Challenge
+console.log("== Array Methods Challenge ==");
 let zero = 0;
 let counter = 3;
 let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
 
-my = my.slice(zero, counter+1).reverse();
+my = my.slice(zero, counter + 1).reverse();
 console.log(my); // ["Osama", "Elham", "Mazero", "Ahmed"];
-console.log(my.slice(zero+1, counter)); // ["Elham", "Mazero"]
-console.log(my[zero+1].slice(zero,counter-1) + my[counter-1].slice(counter-1)); // "Elzero"
-console.log(my[counter-1].slice(zero-2,zero-1) + my[counter-1].slice(zero-1).toUpperCase()); // "rO"
+console.log(my.slice(zero + 1, counter)); // ["Elham", "Mazero"]
+console.log(
+    my[zero + 1].slice(zero, counter - 1) + my[counter - 1].slice(counter - 1)
+); // "Elzero"
+console.log(
+    my[counter - 1].slice(zero - 2, zero - 1) +
+        my[counter - 1].slice(zero - 1).toUpperCase()
+); // "rO"
+console.log("===============================");
