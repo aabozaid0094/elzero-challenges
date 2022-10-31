@@ -254,14 +254,13 @@ let zero = 0;
 let counter = 3;
 let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
 
-my = my.slice(zero, counter + 1).reverse();
+my = my.slice(zero, ++counter).reverse();
 console.log(my); // ["Osama", "Elham", "Mazero", "Ahmed"];
-console.log(my.slice(zero + 1, counter)); // ["Elham", "Mazero"]
+console.log(my.slice(++zero, --counter)); // ["Elham", "Mazero"]
+console.log(my[zero].slice(--zero, --counter) + my[counter].slice(counter)); // "Elzero"
+console.log(-counter);
 console.log(
-    my[zero + 1].slice(zero, counter - 1) + my[counter - 1].slice(counter - 1)
-); // "Elzero"
-console.log(
-    my[counter - 1].slice(zero - 2, zero - 1) +
-        my[counter - 1].slice(zero - 1).toUpperCase()
+    my[counter].slice(-counter, -++zero) +
+        my[counter].slice(-zero).toUpperCase()
 ); // "rO"
 console.log("===============================");
