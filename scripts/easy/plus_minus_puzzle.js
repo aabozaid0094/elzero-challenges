@@ -1,9 +1,11 @@
-let a = 10;
-let b = "20";
-let c = 80;
-console.log(++a + +b++ + +c++ - +a++);
-console.log(++a + -b + +c++ - -a++ + +a);
-console.log(--c + +b + --a * +b++ - +b * a + --a - +true);
+// Plus And Minus Puzzle
+console.log("== Plus And Minus Puzzle ==");
+let aa = 10;
+let bb = "20";
+let cc = 80;
+console.log(++aa + +bb++ + +cc++ - +aa++);
+console.log(++aa + -bb + +cc++ - -aa++ + +aa);
+console.log(--cc + +bb + --aa * +bb++ - +bb * aa + --aa - +true);
 /*
   First console: ++a + +b++ + +c++ - +a++ : 11 + 20 + 80 - 11 : 100
   [++a]
@@ -97,3 +99,4 @@ console.log(--c + +b + --a * +b++ - +b * a + --a - +true);
   - Value: 1
   - Value after: 1
 */
+console.log("===============================");
